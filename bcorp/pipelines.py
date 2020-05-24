@@ -23,7 +23,7 @@ class BcorpPipeline:
         # self.df = pd.read_csv(self.filepath)
 
     def process_item(self, item, spider):
-        if self.df['name'].str.contains(item['name']).any():
+        if self.df['name'].str.contains(item['name'], regex=False).any():
             print(f'************skipping {item["name"]}************')
             # raise DropItem("Duplicate item found: %s" % item)
         else:
