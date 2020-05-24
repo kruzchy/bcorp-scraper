@@ -13,7 +13,7 @@ from .settings import PROJECT_ROOT
 class BcorpPipeline:
     def open_spider(self, spider):
         self.s3 = boto3.resource('s3')
-        self.bucket_name = 'scrapemay16'
+        self.bucket_name = 'bcorp-scraper'
         self.object_key = "scraped.csv"
         path = f"s3://{self.bucket_name}/{self.object_key}"
         self.df = pd.read_csv(open(path))
