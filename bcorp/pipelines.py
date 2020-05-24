@@ -24,11 +24,11 @@ class BcorpPipeline:
 
     def process_item(self, item, spider):
         if self.df['name'].str.contains(item['name']).any():
-            print(f'***skipping {item["name"]}')
+            print(f'************skipping {item["name"]}************')
             # raise DropItem("Duplicate item found: %s" % item)
         else:
             self.hasUpdated = True
-            print(f'****appending {item["name"]}')
+            print(f'************appending {item["name"]}************')
             # dicc = item.__dict__['_values']
             # fieldnames = dicc.keys()
             # writer = csv.DictWriter(open(self.filepath, 'a', encoding='utf-8'), lineterminator='\n', fieldnames=fieldnames)
